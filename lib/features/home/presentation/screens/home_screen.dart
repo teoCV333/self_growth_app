@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:self_growth_app/features/goals/presentation/screens/goals_list_screen.dart';
+import 'package:self_growth_app/features/pets/presentation/screens/pets_list_screen.dart';
+import 'package:self_growth_app/features/reminders/presentation/screens/reminders_list_screen.dart';
+import 'package:self_growth_app/features/shoppings/presentation/screens/shoppings_list_screen.dart';
+
+import '../../../tasks/presentation/screens/tasks_list_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         child: PageView(
-            physics: const BouncingScrollPhysics(), //para efecto de que se puede seguir haciendo scroll
+            physics: const AlwaysScrollableScrollPhysics(), //para efecto de que se puede seguir haciendo scroll
             scrollDirection: Axis.vertical,
             children: const [
               Page1(),
@@ -50,16 +56,195 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xff4FC0DA),
-      child: Center(
-        child: TextButton(
-          style: TextButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 77, 172, 250),
-              shape: const StadiumBorder()),
-          onPressed: () => {},
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text('Bienvenido', style: TextStyle(color: Colors.grey[600], fontSize: 30))
+      child: Container(
+        padding: const EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(vertical: 80),
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+          physics: const NeverScrollableScrollPhysics(),
+          children: const [
+            BtnTask(),
+            BtnGoals(),
+            BtnReminder(),
+            BtnShopping(),
+            BtnPets(),
+            BtnPets(),
+          ],
+        ),
+      ),
+      );
+  }
+}
+
+class BtnPets extends StatefulWidget {
+  const BtnPets({
+    super.key,
+  });
+  @override
+  _btnPets createState() => _btnPets();
+}
+
+// ignore: camel_case_types
+class _btnPets extends State<BtnPets> {
+
+@override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const PetssListScreen()),
+        ),
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color:const Color(0xff86EBC9),
+          borderRadius: BorderRadius.circular(20),
           ),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.add_business, size: 50),
+            Text('Mascota', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BtnShopping extends StatefulWidget {
+  const BtnShopping({
+    super.key,
+  });
+  @override
+  // ignore: library_private_types_in_public_api
+  _btnShopping createState() => _btnShopping();
+}
+
+// ignore: camel_case_types
+class _btnShopping extends State<BtnShopping> {
+  @override
+  Widget build(BuildContext context) {
+    bool isHovered = false;
+    return GestureDetector(
+      onTap: () => {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const ShoppingsListScreen())
+        )
+      },
+      child: Container(
+        decoration: BoxDecoration(color: isHovered ? Colors.red : Color(0xff86EBC9),
+        borderRadius: BorderRadius.circular(20)),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.add_business, size: 50),
+            Text('Compras', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BtnGoals extends StatefulWidget {
+  const BtnGoals({
+    super.key,
+  });
+  @override
+  _btnGoals createState() => _btnGoals();
+}
+
+class _btnGoals extends State<BtnGoals> {
+  @override
+  Widget build(BuildContext context) {
+    bool isHovered = false;
+    return GestureDetector(
+      onTap: () => {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const GoalsListScreen())
+        ),
+      },
+      child: Container(
+        decoration: BoxDecoration(color: isHovered ? Colors.red : Color(0xff86EBC9),
+        borderRadius: BorderRadius.circular(20)),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.edit_calendar, size: 50),
+            Text('Metas', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+ }
+
+class BtnReminder extends StatefulWidget {
+  const BtnReminder({super.key});
+   @override
+    _btnReminder createState()=> _btnReminder();
+}
+
+class _btnReminder extends State<BtnReminder> {
+
+  @override
+  Widget build(BuildContext context) {
+    bool isHovered = false;
+    return GestureDetector(
+      onTap: () => {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const RemindersListScreen())
+        )
+      },
+      child: Container(
+        decoration: BoxDecoration(color: isHovered ? Colors.red : Color(0xff86EBC9),
+        borderRadius: BorderRadius.circular(20)),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.notifications_active, size: 50),
+            Text('Recordatorios', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BtnTask extends StatefulWidget {
+  const BtnTask({super.key});
+
+  @override
+  _btnTask createState() => _btnTask();
+}
+
+class _btnTask extends State<BtnTask> {
+ 
+ bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const TasksListScreen())
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(color: isHovered ? Colors.red : Color(0xff86EBC9),
+        borderRadius: BorderRadius.circular(20)),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.add_task,size: 50),
+            Text('Tareas',style: TextStyle(fontSize: 20)),
+          ],
         ),
       ),
     );
@@ -84,10 +269,10 @@ class MainContent extends StatelessWidget {
         children: [
           const SizedBox(height: 50),
           Text(
-            '11°',
+            'Bienvenido!',
             style: textStyle,
           ),
-          Text('Miercoles', style: textStyle),
+          Text('Mateo', style: textStyle),
           Expanded(child: Container()),
           Icon(Icons.keyboard_arrow_down_sharp,
               size: 90, color: Colors.grey[700])
