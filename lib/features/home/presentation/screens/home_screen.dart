@@ -3,6 +3,7 @@ import 'package:self_growth_app/features/goals/presentation/screens/goals_list_s
 import 'package:self_growth_app/features/pets/presentation/screens/pets_list_screen.dart';
 import 'package:self_growth_app/features/reminders/presentation/screens/reminders_list_screen.dart';
 import 'package:self_growth_app/features/shoppings/presentation/screens/shoppings_list_screen.dart';
+import 'package:self_growth_app/config/menu/menu_home.dart';
 
 import '../../../tasks/presentation/screens/tasks_list_screen.dart';
 
@@ -124,14 +125,13 @@ class BtnShopping extends StatefulWidget {
 
 // ignore: camel_case_types
 class _btnShopping extends State<BtnShopping> {
+  late MenuHome menuHomeOptions;
   @override
   Widget build(BuildContext context) {
     bool isHovered = false;
     return GestureDetector(
       onTap: () => {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const ShoppingsListScreen())
-        )
+        Navigator.pushNamed(context, menuHomeOptions.link )
       },
       child: Container(
         decoration: BoxDecoration(color: isHovered ? Colors.red : Color(0xff86EBC9),
