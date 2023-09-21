@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class TasksListScreen extends StatelessWidget {
-  const TasksListScreen({super.key});
+class ShoppingsMenuScreen extends StatelessWidget {
+
+static const name = 'shoppings_menu';
+
+  const ShoppingsMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class TasksListScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 410),
             const Text(
-              'Tareas',
+              'Compras',
             ),
             Expanded(child: Container()),
           ],

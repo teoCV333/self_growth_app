@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_growth_app/config/router/app_router.dart';
 import 'package:self_growth_app/features/home/presentation/screens/home_screen.dart';
 
 void main() {
@@ -11,11 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       title: 'Self Growth',
-      initialRoute: 'home_screen',
-      routes: {'home_screen': (_) => HomeScreen()},
     );
   }
 }

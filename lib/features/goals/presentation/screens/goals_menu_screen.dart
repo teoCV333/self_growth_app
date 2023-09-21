@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class GoalsListScreen extends StatelessWidget {
-  const GoalsListScreen({super.key});
+class GoalsMenuScreen extends StatelessWidget {
+
+  static const String name = 'goals_menu';
+
+  const GoalsMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

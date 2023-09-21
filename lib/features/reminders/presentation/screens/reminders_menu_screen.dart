@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class RemindersListScreen extends StatelessWidget {
-  const RemindersListScreen({super.key});
+class RemindersMenuScreen extends StatelessWidget {
+
+  static const name = 'reminders_menu';
+
+  const RemindersMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

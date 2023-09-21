@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-class PetssListScreen extends StatelessWidget {
-  const PetssListScreen({super.key});
+class PetsMenuScreen extends StatelessWidget {
+
+  static const name = 'pets_menu';
+
+  const PetsMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
