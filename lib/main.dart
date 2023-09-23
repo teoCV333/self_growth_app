@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:self_growth_app/config/router/app_router.dart';
-import 'package:self_growth_app/features/home/presentation/screens/home_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
