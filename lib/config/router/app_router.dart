@@ -5,6 +5,7 @@ import 'package:self_growth_app/features/pets/presentation/screens/pets_list_scr
 import 'package:self_growth_app/features/reminders/presentation/screens/reminders_menu_screen.dart';
 import 'package:self_growth_app/features/shoppings/presentation/screens/shoppings_menu_screen.dart';
 import 'package:self_growth_app/features/tasks/presentation/screens/tasks_menu_screen.dart';
+import 'package:self_growth_app/features/tasks/presentation/screens/tasks_pending_screen.dart';
 
 // GoRouter configuration
 final appRouter = GoRouter(
@@ -39,6 +40,11 @@ final appRouter = GoRouter(
       name: PetsMenuScreen.name,
       path: '/pets',
       builder: (context, state) => const PetsMenuScreen(),
+    ),
+    GoRoute(
+      name: TasksPendingScreen.name,
+      path: '/pending',
+      builder: (context, state) => const TasksPendingScreen(),
     ),
   ],
 );

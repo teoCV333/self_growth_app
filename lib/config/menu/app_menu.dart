@@ -35,12 +35,12 @@ const menuHomeOptions = <MenuHome>[
   ),
   MenuHome(
     icon: Icons.add_business,
-    link: "/petss",
+    link: "/pets",
     title: "Mascotas",
   ),
   MenuHome(
     icon: Icons.add_business,
-    link: "/pets_list_screen",
+    link: "/pets",
     title: "Mascotas",
   ),
 ];

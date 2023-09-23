@@ -76,11 +76,11 @@ class MenuOptions extends StatelessWidget {
       itemBuilder: (context, index) {
         final menuHome = menuHomeOptions[index];
        return GestureDetector(
-          onTap: () => {
-            context.push(menuHome.link)
-          },
-          child: Buttons(menuHome: menuHome),
-        );
+       onTap: () => {
+         context.push(menuHome.link)
+       },
+       child: Buttons(menuHome: menuHome),
+          );
       },
     );
   }
@@ -96,7 +96,7 @@ class Buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+        return Container(
       decoration: BoxDecoration(
         color:const Color(0xff86EBC9),
         borderRadius: BorderRadius.circular(20),
