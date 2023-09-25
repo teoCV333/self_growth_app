@@ -2,11 +2,11 @@
 class Task {
   final int id; 
   final String title; 
-  final int status; 
+  int status; 
   
   Task({
     required this.id, 
     required this.title, 
-    required this.status
+    this.status = 0,
   });
 }

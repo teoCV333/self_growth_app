@@ -4,8 +4,8 @@ import 'package:self_growth_app/features/home/presentation/screens/home_screen.d
 import 'package:self_growth_app/features/pets/presentation/screens/pets_list_screen.dart';
 import 'package:self_growth_app/features/reminders/presentation/screens/reminders_menu_screen.dart';
 import 'package:self_growth_app/features/shoppings/presentation/screens/shoppings_menu_screen.dart';
-import 'package:self_growth_app/features/tasks/presentation/screens/tasks_menu_screen.dart';
-import 'package:self_growth_app/features/tasks/presentation/screens/tasks_pending_screen.dart';
+import 'package:self_growth_app/features/tasks/presentation/screens/menu/tasks_menu_screen.dart';
+import 'package:self_growth_app/features/tasks/presentation/screens/pending/tasks_pending_screen.dart';
 
 // GoRouter configuration
 final appRouter = GoRouter(

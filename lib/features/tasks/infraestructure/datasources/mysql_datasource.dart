@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:self_growth_app/features/tasks/domain/datasources/tasks_datasource.dart';
 import 'package:self_growth_app/features/tasks/domain/entities/task.entity.dart';
 import 'package:self_growth_app/features/tasks/infraestructure/mappers/task_mapper.dart';
-import 'package:self_growth_app/features/tasks/infraestructure/models/mysql/mysql_response.dart';
+import '../models/mysql/mysql_response.dart';
 
 class MySqlDatasource extends TasksDatasource {
   final dio = Dio(BaseOptions(baseUrl: 'http://192.168.1.54:3000/api/v1'));

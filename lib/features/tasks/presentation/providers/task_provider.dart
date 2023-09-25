@@ -14,18 +14,17 @@ final tasksProvider = StateNotifierProvider<TasksNotifier, List<Task>>((ref) {
 typedef TaskCallback = Future<List<Task>> Function({ int page });
 
 class TasksNotifier extends StateNotifier<List<Task>> {
-
+  List<Task> tasks = [];
   int currentPage = 0;
-  TaskCallback fetchMoreTasks; 
-
+  TaskCallback fetchMoreTasks;  
   TasksNotifier({
     required this.fetchMoreTasks,
   }): super([]);
 
   Future<void> loadNextPage() async { 
     currentPage++;
-    final List<Task> tasks = await fetchMoreTasks(page: currentPage);
+    tasks = await fetchMoreTasks(page: currentPage);
     state = [...tasks];
-  }
-
+  } 
+  
 }
